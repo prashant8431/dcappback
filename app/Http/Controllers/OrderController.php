@@ -114,6 +114,6 @@ class OrderController extends Controller
     public function orderList($id)
     {
 
-        return Order::where('my_company_id', $id)->with('company')->get();
+        return Order::where('my_company_id', $id)->with('company')->orderBy('id', 'desc')->paginate(50);
     }
 }

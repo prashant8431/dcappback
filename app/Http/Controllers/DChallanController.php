@@ -14,7 +14,7 @@ class DChallanController extends Controller
      */
     public function index()
     {
-        return DChallan::with('getOrder')->with('company')->get();
+        return DChallan::with('getOrder')->with('company')->paginate(2);
     }
 
     /**
@@ -81,5 +81,10 @@ class DChallanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dcList($id)
+    {
+        return DChallan::where('my_company_id', $id)->with('getOrder')->with('company')->orderBy('id', 'desc')->paginate(50);
     }
 }

@@ -20,6 +20,8 @@ Route::get('/orderList/{id}', 'OrderController@orderList');
 Route::apiResource('/company', 'CompanyController');
 Route::apiResource('/product', 'ProductController');
 Route::apiResource('/dchallan', 'DChallanController');
+Route::get('/dcList/{id}', 'DChallanController@dcList');
+
 Route::apiResource('/mycompany', 'MyCompanyController');
 Route::apiResource('/productList', 'ProductListController');
 Route::post('/searchProduct', 'ProductListController@searchProduct');
